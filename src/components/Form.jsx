@@ -14,9 +14,10 @@ const Form = ()=>{
         setNextId(nextId+1)
     }
 
-    function submitDetails(e){
-        e.preventDefault();                 
-        console.log(field); 
+    function submitDetails(e) {
+        e.preventDefault();
+        console.log(field);           // raw state
+        console.log(JSON.stringify(field)); // exact shape as string
     }
 
     function handleChange(id, key, value){
@@ -30,7 +31,7 @@ const Form = ()=>{
     }
     return(
         <div>
-            <form>
+            <form onSubmit= {submitDetails}>
                 {field.map((col) => {
                    return <div key={col.id}>
                         <input type="text" name="name" placeholder="Name" onChange={(e)=> handleChange(col.id, "name", e.target.value)}/>
