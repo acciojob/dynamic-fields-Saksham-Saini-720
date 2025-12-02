@@ -18,7 +18,7 @@ const Form = ()=>{
         e.preventDefault();
         // console.log(field);           // raw state
         let output = field.map(({name, age}) => ({name, age}))
-        console.log(JSON.stringify(output)); // exact shape as string
+        console.log((output)); // exact shape as string
     }
 
     function handleChange(id, key, value){
